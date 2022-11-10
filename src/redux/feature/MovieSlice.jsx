@@ -82,7 +82,7 @@ export const searchMovie = createAsyncThunk(
 
 export const getGenre = createAsyncThunk(
     'genres/getGenre',
-    async (apiKey) => {
+    async () => {
         try {
             const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=244fa9aef597e28aa246abfdef2d39f6&language=en-US&page=4`)
             return res.data.genres
@@ -92,12 +92,25 @@ export const getGenre = createAsyncThunk(
     }
 )
 
+export const getDetails = createAsyncThunk ("movies/getDetails", async (id = false) => {
+    try{
+        const res = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=244fa9aef597e28aa246abfdef2d39f6`
+        );
+        return res.data
+    }
+    catch (error){
+        console.log(error)
+    }
+})
+
 const movieSlice = createSlice({
     name: "movies",
     initialState: {
         genre: [],
         movies: [],
         search: [],
+        details: [],
         loading: false,
         error: false
     },
@@ -110,6 +123,9 @@ const movieSlice = createSlice({
         },
         [searchMovie.fulfilled]: (state, { payload }) => {
             state.search = payload
+        },
+        [getDetails.fulfilled]: (state, { payload }) => {
+            state.details = payload
         }
     }
 }

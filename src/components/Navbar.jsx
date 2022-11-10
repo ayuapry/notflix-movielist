@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom'
 export const Navbar = () => {
     const [nav, setNav] = useState(false)
     const handleClick = () => setNav(!nav)
-    // const handelClose = () => setNav(!nav)
-
     const [isScrolled, setIsScrolled] = useState(false)
 
     useEffect(() => {
@@ -42,7 +40,7 @@ export const Navbar = () => {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </form>
-                <div className='flex items-center mx-5'><FaUserAlt size={20} /></div>
+                <Link to='/register' className='flex items-center mx-5'><FaUserAlt size={20} /></Link>
                 
                 {/* <button className='border-none bg-transparent text-white mr-4'>Sign In</button>
                 <button className='px-8 py-3'>Sign Up</button> */}
@@ -57,8 +55,8 @@ export const Navbar = () => {
             <li className='border-b-2 border-green-300 w-full'>Popular</li>
             <li className='border-b-2 border-green-300 w-full'>Tv Shows</li>
             <div className='flex flex-col my-4'>
-                <button className='bg-transparent text-white-600 px-8 py-3 mb-4'>Sign In</button>
-                <button className='px-8 py-3'>Sign Up</button>
+                <Link to='/login' className='bg-transparent border-2 border-green-600 rounded-lg hover:bg-green-400 text-center text-white-600 px-8 py-3 mb-4'>Sign In</Link>
+                <Link to='/register' className='bg-green-600 border-green-600 rounded-lg hover:bg-green-400 text-center text-white-600 px-8 py-3 mb-4'>Sign Up</Link>
             </div>
         </ul>
     </div>

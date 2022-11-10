@@ -4,5 +4,6 @@ import AllMovieSlice from './feature/MovieSlice'
 export default configureStore ({
     reducer: {
         movies: AllMovieSlice,
+        details: AllMovieSlice,
     }
 })

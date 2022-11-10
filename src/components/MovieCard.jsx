@@ -5,11 +5,10 @@ import {AiFillStar} from 'react-icons/ai'
 export const MovieCard = ({database}) => {
   const navigate = useNavigate();
   return (
-    <div className='bg-white'>
-    <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-    <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+    // <div className='bg-white'>
+    <div className="mx-auto max-w-xl py-1 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-5">
+    <div className="mt-0 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
       {database && database.map(item => (
-        // console.log(item)
         <div key={item.id} className="group relative" onClick={() => navigate(`/details/${item.id}`)}>
           <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80" >
             <img
@@ -33,6 +32,6 @@ export const MovieCard = ({database}) => {
       ))}
     </div>
   </div>
-  </div>
+  // </div>
   )
 }

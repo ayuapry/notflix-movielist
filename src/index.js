@@ -7,6 +7,8 @@ import { Hero } from './components/Hero';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { Details } from './pages/Details';
+import { Register } from './pages/Register';
+import { Login } from './pages/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +17,9 @@ root.render(
   <Routes>
     <Route path='/' element={<App />} />
     <Route path='/hero' element={<Hero />} />
-    <Route path='/details' element={<Details />} />
+    <Route path='/details/:id' element={<Details />} />
+    <Route path='/register' element={<Register />} />
+    <Route path='/login' element={<Login />} />
   </Routes>
   </BrowserRouter>
   </Provider>
