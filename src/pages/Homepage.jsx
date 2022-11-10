@@ -30,23 +30,17 @@ export const Homepage = () => {
         <Navbar />
         <Hero />
         <HeadlineCards />
-        <div className='bg-black'>
-          {/* <Row rowID='1' title='' fetchURL={requests.requestPopular} /> */}
+        <div className='bg-black '>
           <Row rowID='2' title='Top Rated Movie' fetchURL={requests.requestTopRated} />
           <Row rowID='3' title='Up Coming Movie' fetchURL={requests.requestUpcoming} />
-          {/* <Row rowID='4' title='Adventure Movie' fetchURL={requests.requestAdventure} />
-          <Row rowID='5' title='Family Movie' fetchURL={requests.requestFamily} />
-          <Row rowID='6' title='Horor Movie' fetchURL={requests.requestHoror} /> */}
         </div>
 
-{/* 
+        {/* 
         <div className=' bg-white'>
           <h1 className=' text-black mx-3 pt-10 pb-5 md:px-[10px] lg:ml-[1000px] xl:ml-[120px]'>NOW TRENDING</h1>
           <MovieCard database={movies}    />
         </div>
          */}
-        
-
         <Footer />
     </div>
   )

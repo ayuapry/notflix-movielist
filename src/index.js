@@ -9,6 +9,7 @@ import store from './redux/store';
 import { Details } from './pages/Details';
 import { Register } from './pages/Register';
 import { Login } from './pages/Login';
+import { Search } from './components/Search';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
     <Route path='/details/:id' element={<Details />} />
     <Route path='/register' element={<Register />} />
     <Route path='/login' element={<Login />} />
+    <Route path='/search/:name' element={<Search />} />
   </Routes>
   </BrowserRouter>
   </Provider>
