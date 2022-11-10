@@ -30,7 +30,7 @@ export const Homepage = () => {
         <Navbar />
         <Hero />
         <HeadlineCards />
-        <div className='bg-white'>
+        <div className='bg-black'>
           {/* <Row rowID='1' title='' fetchURL={requests.requestPopular} /> */}
           <Row rowID='2' title='Top Rated Movie' fetchURL={requests.requestTopRated} />
           <Row rowID='3' title='Up Coming Movie' fetchURL={requests.requestUpcoming} />

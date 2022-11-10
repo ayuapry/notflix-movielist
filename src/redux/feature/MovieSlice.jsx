@@ -68,17 +68,17 @@ export const getMovies = createAsyncThunk(
         }
     }
 )
-export const searchMovie = createAsyncThunk(
-    'search/searchMovie',
-    async (query) => {
-        try {
-            const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=39d534102975349064b234a5f47263bb&language=en-US&page=1&include_adult=false&query=${query}`)
-            return res.data.results
-        } catch (err) {
-            console.log(err)
-        }
-    }
-)
+// export const searchMovie = createAsyncThunk(
+//     'search/searchMovie',
+//     async (query) => {
+//         try {
+//             const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=39d534102975349064b234a5f47263bb&language=en-US&page=1&include_adult=false&query=${query}`)
+//             return res.data.results
+//         } catch (err) {
+//             console.log(err)
+//         }
+//     }
+// )
 
 export const getGenre = createAsyncThunk(
     'genres/getGenre',
@@ -104,13 +104,26 @@ export const getDetails = createAsyncThunk ("movies/getDetails", async (id = fal
     }
 })
 
+export const getReviews = createAsyncThunk ("movies/getReviews", async (id) => {
+    try{
+        const res = await axios.get(
+            `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=244fa9aef597e28aa246abfdef2d39f6`
+        );
+        return res.data.results
+    }
+    catch (error){
+        console.log(error)
+    }
+})
+
 const movieSlice = createSlice({
     name: "movies",
     initialState: {
         genre: [],
         movies: [],
-        search: [],
+        // search: [],
         details: [],
+        reviews: [],
         loading: false,
         error: false
     },
@@ -121,11 +134,14 @@ const movieSlice = createSlice({
         [getGenre.fulfilled]: (state, { payload }) => {
             state.genre = payload
         },
-        [searchMovie.fulfilled]: (state, { payload }) => {
-            state.search = payload
-        },
+        // [searchMovie.fulfilled]: (state, { payload }) => {
+        //     state.search = payload
+        // },
         [getDetails.fulfilled]: (state, { payload }) => {
             state.details = payload
+        },
+        [getReviews.fulfilled]: (state, { payload }) => {
+            state.reviews = payload
         }
     }
 }
