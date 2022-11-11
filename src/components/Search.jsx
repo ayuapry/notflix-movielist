@@ -17,15 +17,13 @@ export const Search = () => {
     }, [])
 
     return (
-    <div className=''>
+    <div className='bg-black'>
         <Navbar />
-        <div className=''>
             {search.map((item, i) => (
                 <div className=''>
                     <MovieCard key={i} item={item} />
                 </div>
             ))}
-        </div>
         <Footer />
     </div>
   )

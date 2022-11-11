@@ -8,5 +8,7 @@ export default configureStore ({
         details: AllMovieSlice,
         reviews: AllMovieSlice,
         search: SearchSlice,
+        genre: AllMovieSlice,
+        genreMovies: AllMovieSlice,
     }
 })

@@ -28,10 +28,10 @@ export const HeadlineCards = () => {
 
     return (
     <div>
-    <div className='bg-black'>
-    <h1 className='bg-black pt-5 ml-12 text-white font-bold text-xl md:ml-12 xl:ml-12 xl:pt-5 '>Popular Movies</h1>
+    <div className='bg-white'>
+    <h1 className='bg-white pt-5 ml-12 text-black font-bold text-xl md:ml-12 xl:ml-12 xl:pt-5 '>Popular Movies</h1>
     </div>
-    <div className='bg-black max-w-[1640px] mx-auto px-[50px] p-4 py-12 grid md:grid-cols-3 gap-6 mx-100 '>
+    <div className='bg-white max-w-[1640px] mx-auto px-[50px] p-4 py-12 grid md:grid-cols-3 gap-6 mx-100 '>
         {/* card */}
         <div className='rounded-xl relative drop-shadow-lg '>
             {/* overlay */}

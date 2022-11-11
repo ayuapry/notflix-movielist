@@ -29,14 +29,15 @@ export const Navbar = () => {
     }
 
     return (
-    <header className={`${isScrolled && 'bg-[#383838]'}`}>
+    <header className={`${isScrolled && 'bg-[#221F1F]'}`}>
     <div className='w-screen h-[80px] z-10 text-white font-light drop-shadow-lg '>
         <div className='px-2 flex justify-between items-center w-full h-full'>
             <div className='flex items-center'>
-                <Link to='/' className='text-3xl font-bold ml-4 sm:text-4xl text-green-600 cursor-pointer '>NOTFLIX</Link>  
+                <Link to='/' className='text-3xl font-bold ml-4 sm:text-4xl text-[#E50914] cursor-pointer '>NOTFLIX</Link>  
                 <ul className='hidden md:flex'>
                     <li>Popular</li>
                     <li>Tv Shows</li>
+                    <Link className='flex items-center' to='/genrepage'>Genres</Link>
                 </ul>
             </div>
             <form onSubmit={onSubmit} className="relative mx-auto w-max mr-2">
@@ -71,13 +72,13 @@ export const Navbar = () => {
             </div>
         </div>
 
-        <ul className={!nav ? 'hidden' : 'absolute bg-zinc-500 w-full px-8'}>
-            <li className='border-b-2 border-green-300 w-full'>Home</li>
-            <li className='border-b-2 border-green-300 w-full'>Popular</li>
-            <li className='border-b-2 border-green-300 w-full'>Tv Shows</li>
-            <div className='flex flex-col my-4'>
-                <Link to='/login' className='bg-transparent border-2 border-green-600 rounded-lg hover:bg-green-400 text-center text-white-600 px-8 py-3 mb-4'>Sign In</Link>
-                <Link to='/register' className='bg-green-600 border-green-600 rounded-lg hover:bg-green-400 text-center text-white-600 px-8 py-3 mb-4'>Sign Up</Link>
+        <ul className={!nav ? 'hidden' : 'absolute bg-white w-full px-8 text-black'}>
+            <li className='border-b-2 border-red-300 w-full'>Home</li>
+            <li className='border-b-2 border-red-300 w-full'>Popular</li>
+            <li className='border-b-2 border-red-300 w-full'>Tv Shows</li>
+            <div className='flex flex-rows gap-3 justify-end my-4'>
+                <Link to='/login' className='bg-[#ff8080] text-white rounded-lg hover:bg-[#E50914] font-bold text-center text-white-600 px-8 py-3 mb-4'>Sign In</Link>
+                <Link to='/register' className='bg-[#E50914] border-red-600 text-white font-bold rounded-lg hover:bg-[#ff8080] text-center text-white-600 px-8 py-3 mb-4'>Sign Up</Link>
             </div>
         </ul>
     </div>

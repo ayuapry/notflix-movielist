@@ -63,7 +63,7 @@ export const Details = () => {
             </div>
           </div>
         </div>
-        <div className='bg-black pt-[400px] md:pt-0'>
+        <div className='bg-black pt-[400px] pb-0 md:pt-0'>
         <p className='font-bold text-center text-xl mb-5'>What People Says ?</p>
         {
           reviews && reviews.slice(0,2).map((review) => (

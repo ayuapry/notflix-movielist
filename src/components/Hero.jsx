@@ -30,7 +30,7 @@ export const Hero = () => {
                     Enjoy exclusive Notflix Originals as well as popular movies and TV shows for IDR 59,000 79,000/month. Watch now, cancel anytime.
                 </p>
                 <div className="mt-10">
-                <Link to ='/register' className='px-8 py-3 bg-[#00b33c]  border-none rounded-lg hover:bg-white/50 hover:text-white'>Sign Up Now</Link>
+                <Link to ='/register' className='px-8 py-3 bg-[#E50914]  border-none rounded-lg hover:bg-white/50 hover:text-white'>Sign Up Now</Link>
                 </div>
             </div>
         </div>
