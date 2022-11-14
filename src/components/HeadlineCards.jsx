@@ -2,10 +2,12 @@ import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovies } from '../redux/feature/MovieSlice';
 import {AiFillStar} from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom';
 
-export const HeadlineCards = () => {
+export const HeadlineCards = ({item}) => {
     const {movies, loading} = useSelector((state) => state.movies);
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     useEffect(() => {
         dispatch(getMovies())
@@ -33,7 +35,7 @@ export const HeadlineCards = () => {
     </div>
     <div className='bg-white max-w-[1640px] mx-auto px-[50px] p-4 py-12 grid md:grid-cols-3 gap-6 mx-100 '>
         {/* card */}
-        <div className='rounded-xl relative drop-shadow-lg '>
+        <div className='rounded-xl relative cursor-pointer' onClick={() => navigate(`/details/${res.id}`)}>
             {/* overlay */}
             <div className='absolute w-full h-full bg-black/50 rounded-xl text-white'>
                 <p className='font-bold px-2 pt-4'>{truncateString(res?.title,20)}</p>
@@ -47,7 +49,7 @@ export const HeadlineCards = () => {
             src={`https://image.tmdb.org/t/p/original/${res?.backdrop_path}`} alt="/" />
         </div>
 
-        <div className='rounded-xl relative'>
+        <div className='rounded-xl relative cursor-pointer' onClick={() => navigate(`/details/${res?.id}`)}>
             {/* overlay */}
             <div className='absolute w-full h-full bg-black/50 rounded-xl text-white'>
             <p className='font-bold px-2 pt-4'>{truncateString(res1?.title,20)}</p>
@@ -61,7 +63,7 @@ export const HeadlineCards = () => {
             src={`https://image.tmdb.org/t/p/original/${res1?.backdrop_path}`} alt="/" />
         </div>
 
-        <div className='rounded-xl relative'>
+        <div className='rounded-xl relative cursor-pointer' onClick={() => navigate(`/details/${res?.id}`)}>
             {/* overlay */}
             <div className='absolute w-full h-full bg-black/50 rounded-xl text-white'>
             <p className='font-bold px-2 pt-4'>{truncateString(res2?.title,20)}</p>

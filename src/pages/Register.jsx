@@ -41,7 +41,7 @@ export const Register = () => {
                   placeholder='Password'
                   autoComplete='current-password'
                 />
-                <button className='bg-green-600 py-3 my-6 rounded font-bold'>
+                <button className='py-3 my-6 rounded font-bold'>
                   Sign Up
                 </button>
                 {/* <div className='flex justify-between items-center text-sm text-gray-600'>
@@ -57,7 +57,6 @@ export const Register = () => {
                   </span>{' '}
                   <Link to='/login'>Login</Link>
                 </p>
-                <p><Link to='/'>Home</Link></p>
               </form>
             </div>
           </div>

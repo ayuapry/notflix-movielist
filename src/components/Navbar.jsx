@@ -46,8 +46,8 @@ export const Navbar = () => {
                         name='search'
                         onChange={(e => setSearch(e.target.value))}
                         placeholder='search movie' 
-                        className="peer cursor-pointer relative z-10 h-12 w-12 rounded-full bg-white/20 pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-300 focus:pl-16 focus:pr-4" />
-                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-black-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        className="peer cursor-pointer relative z-10 h-12 w-12 rounded-full bg-black/20 pl-12 outline-none focus:w-full focus:cursor-text focus:border-red-300 focus:pl-16 focus:pr-4" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-black-500 px-3.5 peer-focus:border-red-300 peer-focus:stroke-lime-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </form>
@@ -77,7 +77,7 @@ export const Navbar = () => {
             <li className='border-b-2 border-red-300 w-full'>Popular</li>
             <li className='border-b-2 border-red-300 w-full'>Tv Shows</li>
             <div className='flex flex-rows gap-3 justify-end my-4'>
-                <Link to='/login' className='bg-[#ff8080] text-white rounded-lg hover:bg-[#E50914] font-bold text-center text-white-600 px-8 py-3 mb-4'>Sign In</Link>
+                <Link to='/login' className='bg-transparent border-2 border-red-600 text-black rounded-lg hover:bg-[#E50914] font-semibold text-center px-8 py-3 mb-4'>Sign In</Link>
                 <Link to='/register' className='bg-[#E50914] border-red-600 text-white font-bold rounded-lg hover:bg-[#ff8080] text-center text-white-600 px-8 py-3 mb-4'>Sign Up</Link>
             </div>
         </ul>

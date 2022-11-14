@@ -15,7 +15,7 @@ export const Genre = () => {
         dispatch(getGenreMovies(id))
     }, []);
     return (
-        <div className='bg-black flex'>
+        <div className='bg-black'>
             <Navbar />
           { genreMovies && genreMovies.map((item) => (
           <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-0 mt-20 ml-5' onClick={() => navigate(`/details/${item.id}`)}> 
