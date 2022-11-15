@@ -1,8 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import { Navbar } from '../components/Navbar'
+// import { Navbar } from '../components/Navbar'
+import { useDispatch } from 'react-redux';
+import { useAuthState } from "react-firebase-hooks/auth";
+import {registerWithEmailAndPassword, auth} from '../redux/feature/AuthSlice'
+
 
 export const Register = () => {
+  // const [user, setUser] = useState([]);
+  const initialValues =  {
+    name: '',
+    email: '',
+    password: '',
+  };
+  const [formValues, setFormValues] = useState(initialValues);
+  const dispatch = useDispatch();
+
+  const handleChange = e => {
+    const {name, value} = e.target;
+    setFormValues({ ...formValues, [name]: value});
+  }
+  // const [userss] = useAuthState(auth);
+
+  // const token = JSON.parse(localStorage.getItem('token'))
+  // const users = JSON.parse(localStorage.getItem("user"));
+
+  // useEffect(() => {
+  //    setToken(token);
+  //    setUser(users);
+  // }, [userss, token]);
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      console.log(formValues)
+      dispatch(registerWithEmailAndPassword(formValues));
+    };
   return (
     <div>
       <div className='w-full h-screen'>
@@ -13,35 +45,41 @@ export const Register = () => {
         />
         <div className='bg-black/60 fixed top-0 left-0 w-full h-screen'></div>
         <div className='fixed w-full px-4 py-24 z-50'>
-        <Navbar />
+        {/* <Navbar /> */}
           <div className='max-w-[450px] h-[500px] mx-auto bg-black/75 text-white'>
             <div className='max-w-[320px] mx-auto py-16'>
               <h1 className='text-3xl font-bold'>Sign Up</h1>
               <form
-                // onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
                 className='w-full flex flex-col py-4'
               >
                  <input
-                //   onChange={(e) => setName(e.target.value)}
+                  name='name'
+                  value={formValues.name}
+                  onChange={handleChange}
                   className='p-3 my-2 bg-gray-700 rouded'
                   type='name'
                   placeholder='Full Name'
                 />
                 <input
-                //   onChange={(e) => setEmail(e.target.value)}
+                 name='email'
+                 value={formValues.email}
+                 onChange={handleChange}
                   className='p-3 my-2 bg-gray-700 rouded'
                   type='email'
                   placeholder='Email'
                   autoComplete='email'
                 />
                 <input
-                //   onChange={(e) => setPassword(e.target.value)}
+                  name='password'
+                  value={formValues.password}
+                  onChange={handleChange}
                   className='p-3 my-2 bg-gray-700 rouded'
                   type='password'
                   placeholder='Password'
                   autoComplete='current-password'
                 />
-                <button className='py-3 my-6 rounded font-bold'>
+                <button onClick={handleSubmit} className='py-3 my-6 rounded font-bold'>
                   Sign Up
                 </button>
                 {/* <div className='flex justify-between items-center text-sm text-gray-600'>

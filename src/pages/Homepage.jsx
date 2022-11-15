@@ -13,12 +13,14 @@ import { HeadlineCards } from '../components/HeadlineCards'
 import { Row } from '../components/Row'
 import requests from '../Requests'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 
 export const Homepage = () => {
     const {movies, loading} = useSelector((state) => state.movies);
     const {genre} = useSelector((state) => state.genre);
     const dispatch = useDispatch();
+    const [select, setSelect] = useState('')
   
     useEffect(() => {
       dispatch(getMovies())
@@ -62,10 +64,6 @@ export const Homepage = () => {
           <MovieCard database={movies}    />
         </div>
          */}
-         <div>
-          
-         </div>
-         
         <Footer />
     </div>
   )

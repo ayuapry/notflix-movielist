@@ -5,6 +5,7 @@ import { getDetails, getReviews } from '../redux/feature/MovieSlice';
 import { Navbar } from '../components/Navbar';
 import {AiFillStar} from 'react-icons/ai'
 import { Footer } from '../components/Footer';
+import { Cast } from '../components/Cast';
 
 export const Details = () => {
   const {id} = useParams()
@@ -90,6 +91,7 @@ export const Details = () => {
         </div>
         ))}
         </div>
+        <Cast />
         <Footer />
     </div>
   )

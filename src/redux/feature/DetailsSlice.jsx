@@ -63,13 +63,28 @@ export const getReviews = createAsyncThunk ("movies/getReviews", async (id) => {
     }
 })
 
-const movieSlice = createSlice({
+export const getCast = createAsyncThunk ("movies/getCast", async (id = false) => {
+    try{
+        const res = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=244fa9aef597e28aa246abfdef2d39f6&language=en-US`
+        );
+        return res.data
+        // console.log(res.data)
+    }
+    catch (error){
+        console.log(error)
+    }
+})
+
+
+const DetailSlice = createSlice({
     name: "movies",
     initialState: {
         genre: [],
         movies: [],
         details: [],
         reviews: [],
+        cast: [],
         genreMovies: [],
         loading: false,
         error: false
@@ -90,7 +105,10 @@ const movieSlice = createSlice({
         [getGenreMovies.fulfilled]: (state, { payload }) => {
             state.genreMovies = payload
         },
+        [getCast.fulfilled]: (state, { payload }) => {
+            state.cast = payload
+        },
     }
 }
 )
-export default movieSlice.reducer
+export default DetailSlice.reducer
