@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // import { Navbar } from '../components/Navbar'
 import { useDispatch } from 'react-redux';
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -8,6 +8,7 @@ import {registerWithEmailAndPassword, auth} from '../redux/feature/AuthSlice'
 
 export const Register = () => {
   // const [user, setUser] = useState([]);
+  const navigate = useNavigate()
   const initialValues =  {
     name: '',
     email: '',
@@ -34,6 +35,7 @@ export const Register = () => {
       e.preventDefault();
       console.log(formValues)
       dispatch(registerWithEmailAndPassword(formValues));
+      navigate('/')
     };
   return (
     <div>

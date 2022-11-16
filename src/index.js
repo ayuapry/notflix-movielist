@@ -10,7 +10,6 @@ import { Details } from './pages/Details';
 import { Register } from './pages/Register';
 import { Login } from './pages/Login';
 import { Search } from './components/Search';
-import { GenrePage } from './pages/GenrePage';
 import { Genre } from './components/Genre';
 import { Profile } from './pages/Profile';
 
@@ -26,7 +25,6 @@ root.render(
     <Route path='/register' element={<Register />} />
     <Route path='/login' element={<Login />} />
     <Route path='/search/:name' element={<Search />} />
-    <Route path='/genrepage' element={<GenrePage />} />
     <Route path='/Genres/:id' element={<Genre />} />
     <Route path='/profile' element={<Profile />} />
   </Routes>
