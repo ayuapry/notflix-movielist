@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { getReviews } from '../redux/feature/MovieSlice';
-import {AiFillStar} from 'react-icons/ai'
+import {AiFillStar, AiFillFileText} from 'react-icons/ai'
 
 
 export const Review = () => {
@@ -25,8 +25,8 @@ export const Review = () => {
   return (
     <div className='bg-black pt-[400px] pb-0 md:pt-0'>
         <p className='font-bold text-center text-xl mb-5'>What People Says ?</p>
-        {
-          reviews && reviews.slice(0,2).map((review, i) => (
+        { reviews.length > 0 ? (
+          reviews.slice(0,2).map((review, i) => (
         <div className='bg-black pb-5 '> 
           <article key={i} className='border-2 px-10 mx-[20px] border-white bg-white rounded-xl md:mx-[80px]'>
               <div className="flex items-center mb-4 space-x-4 mt-5">
@@ -52,7 +52,17 @@ export const Review = () => {
               <a href="#" className="block mb-5 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">Read more</a>
           </article>
         </div>
-        ))}
+          ))
+          ) : ( 
+            <div className='pb-10'>
+            <div className="bg-white rounded-xl mx-5 xl:mx-20 relative flex justify-center items-center" style={{ minHeight: "300px" }}>
+                  <div className="absolute flex flex-col items-center">
+                    <AiFillFileText color='black' className="text-6xl" />
+                    <p className="mt-4 font-medium text-black">There is not reviews</p>
+                  </div>
+                </div>
+            </div>
+          )}
         </div>
   )
 }

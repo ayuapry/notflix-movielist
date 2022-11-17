@@ -31,7 +31,7 @@ export const Details = () => {
           </div>
 
           <div className='w-full h-screen bg-black text-white md:h-screen'>
-            <div className='mx-5 md:mt-[170px] lg:mt-[90px] '>
+            <div className='mx-5 mr-20 md:mt-[170px] lg:mt-[90px] '>
               <p className='text-center font-bold text-2xl' >{details?.title || details?.original_title}</p>
               <p className='pt-3 font-semibold'>Original Title : {details?.original_title}</p>
               <p className='pt-3 font-thin'>overview:<br />{details?.overview}</p>
@@ -52,7 +52,7 @@ export const Details = () => {
               <div className='pt-10'>
                 <a href={`https://www.youtube.com/results?search_query=${details?.original_title}`} className='px-8 py-3 pt-3 mt-[60px] bg-white/20 border-none rounded-lg hover:bg-white/50 hover:text-white xl:mt-[50px]'>Watch Trailer</a>
               </div>
-              <hr class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700" />
+              {/* <hr class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700" /> */}
             </div>
           </div>
         </div>
