@@ -90,10 +90,10 @@ export const Navbar = () => {
                 {!nav ? <AiOutlineMenu size={30} className='cursor-pointer' /> : <AiOutlineClose  size={40} className='w-5 cursor-pointer ' />}
             </div>
         </div>
-        <ul className={!nav ? 'hidden' : 'absolute bg-white w-full px-8 text-black'}>
+        <ul className={!nav ? 'hidden' : 'absolute bg-white w-full px-8 text-black pb-10'}>
             <li className='border-b-2 border-red-300 w-full'>Popular</li>
             <li className='border-b-2 border-red-300 w-full'>Tv Shows</li>
-            <div className="filter-dropdowns mb-10">
+            {/* <div className="filter-dropdowns mb-10">
                     <div className="relative inline-block text-left">
                         <div>
                             <button 
@@ -129,13 +129,9 @@ export const Navbar = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             {(token) ? 
-            <div>
-                <ul>
-                    <Link to='/profile' className='border-b-2 border-red-300 w-full'>Profile</Link>
-                </ul>
-            </div>
+                    <li className='border-b-2 border-red-300 w-full'><Link to='/profile'>Profile</Link></li>
             :
             <div className='flex flex-rows gap-3 justify-end my-4'>
                 <Link to='/login' className='bg-transparent border-2 border-red-600 text-black rounded-lg hover:bg-[#E50914] font-semibold text-center px-8 py-3 mb-4'>Sign In</Link>
